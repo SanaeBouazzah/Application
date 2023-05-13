@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Category;
 
 class HomeController extends Controller
 {
     public function index(){
-      $allCategories = ['Category 1', 'Category 2'];
-      return view(view:'index', ['categories' => $allCategories]);
+      $allCategories =  Category::all();
+      return view('index', ['categories' => $allCategories]);
     }
 }
